@@ -1,29 +1,33 @@
-const MyApp = Vue.component("MyApp", {
+const template = `
+	<div
+		class="page-wrapper"
+		:style="styles.pageWrapStyle"
+	>
+		my app template {{count}}
+	</div>
+`;
+
+const PageWrap = Vue.component("PageWrap", {
     data() {
-	return {
-	    count: 0,
-	    styles: {
-		pageWrapStyle: {
-		    border: '1px solid gray'
-		}
-	    }
-	}
+        return {
+            count: 0,
+            styles: {
+                pageWrapStyle: {
+                    padding: '10px'
+                }
+            }
+        }
     },
-    template: `
-<div
-:style="styles.pageWrapStyle"
->
-my app template {{count}}
-</div>`,
+    template: template,
     created() {
-	this.increaseCount();
+        this.increaseCount();
     },
     methods: {
-	increaseCount(){
-	    this.count = this.count + 1;
-	    setTimeout(this.increaseCount, 1000);
-	}
+        increaseCount() {
+            this.count = this.count + 1;
+            setTimeout(this.increaseCount, 1000);
+        }
     }
 });
 
-export default MyApp
+export default PageWrap

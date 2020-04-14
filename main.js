@@ -1,19 +1,19 @@
-import MyApp from './App.js'
+import PageWrap from './App.js'
 
-Vue.config.devtools = true
+Vue.config.devtools = true;
 
 new Vue({
     el: '#app',
     components: {
-	MyApp
+        PageWrap
     },
     mounted() {
-	console.log("mounted");
+        console.log("mounted");
     },
     template: `
-<div class="the-app">
-Here's some stuff
-<MyApp></MyApp>
-</div>
+        <div class="the-app">
+            Here's some stuff
+            <PageWrap></PageWrap>
+        </div>
 `
-})
+});
