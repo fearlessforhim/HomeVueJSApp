@@ -12,8 +12,9 @@ new Vue({
     },
     template: `
         <div class="the-app">
-            Here's some stuff
-            <PageWrap></PageWrap>
+            <PageWrap>
+                here's some more stuff
+            </PageWrap>
         </div>
 `
 });

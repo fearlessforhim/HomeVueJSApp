@@ -3,7 +3,7 @@ const template = `
 		class="page-wrapper"
 		:style="styles.pageWrapStyle"
 	>
-		my app template {{count}}
+		<slot></slot>
 	</div>
 `;
 
@@ -18,16 +18,7 @@ const PageWrap = Vue.component("PageWrap", {
             }
         }
     },
-    template: template,
-    created() {
-        this.increaseCount();
-    },
-    methods: {
-        increaseCount() {
-            this.count = this.count + 1;
-            setTimeout(this.increaseCount, 1000);
-        }
-    }
+    template: template
 });
 
 export default PageWrap
