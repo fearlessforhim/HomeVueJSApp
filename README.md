@@ -1,4 +1,4 @@
-# app
+# generation-advisor-vue-js
 
 ## Project setup
 ```

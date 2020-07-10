@@ -1,0 +1,58 @@
+.r {
+  margin-left: -5px;
+  margin-right: -5px;
+  box-sizing: border-box;
+
+  &:before,&:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  %c {
+    float: left;
+    padding: 0 5px;
+    position: relative;
+    min-height: 1px;
+    box-sizing: border-box;
+  }
+
+  $columns: 12;
+
+  @for $i from 1 through $columns {
+    > .c#{$i} {
+    @extend %c;
+      width: (100% / $columns) * $i;
+    }
+  }
+
+  &.with-separators {
+    > .c + .c {
+      border-left: 1px solid $panel-border;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .r {
+    %mc {
+      float: left;
+      padding: 0 5px;
+      position: relative;
+      min-height: 1px;
+      box-sizing: border-box;
+    }
+
+    $columns: 12;
+
+    @for $i from 1 through $columns {
+      > .c#{$i} {
+        @extend %mc;
+        width: (100% / $columns) * $i;
+      }
+    }
+  }
+}
