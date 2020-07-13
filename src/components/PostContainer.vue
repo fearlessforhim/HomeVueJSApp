@@ -21,7 +21,7 @@
             }
         },
         mounted() {
-            this.axios.get("http://localhost:5000/posts")
+            this.axios.get("http://localhost:8000/getPosts")
             .then((response) => {
                 this.posts = response.data;
             });
