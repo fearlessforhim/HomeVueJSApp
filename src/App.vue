@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="default-theme">
+    <div id="app">
         <PageHeader/>
         <ContentContainer/>
     </div>

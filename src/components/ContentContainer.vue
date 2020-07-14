@@ -26,6 +26,6 @@
 
 <style scoped lang="scss">
     .content-container {
-        padding: 20px;
+        padding: 90px;
     }
 </style>

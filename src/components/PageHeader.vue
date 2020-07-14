@@ -2,41 +2,61 @@
     <div
             class="header-wrap"
     >
-        <div
-                class="blog-title"
-        >
-            Four In Faith
-        </div>
+        <Row>
+            <div class="c8">
+                <div class="blog-title">
+                    Four In Faith
+                </div>
+            </div>
+            <div class="c3">
+                <div class="links">
+                    <div class="r">
+                        <div class="c6"></div>
+                        <div class="c3">
+                            <span class="link-item">Blog</span>
+                        </div>
+                        <div class="c3">
+                            <span class="link-item">About</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Row>
     </div>
 </template>
 
 <script>
+    import Row from "./common/Row";
     export default {
         name: "PageHeader",
-        data: function () {
-            return {
-                time: new Date(),
-                user: 'joe_user',
-                menuIsOpen: false
-            }
-        },
-        created() {
-            this.startTimer();
-        },
-        methods: {
-            startTimer() {
-                this.time = new Date();
-                setTimeout(this.startTimer, 100);
-            }
-        }
+        components: {Row},
     }
 </script>
 
 <style scoped lang="scss">
     .header-wrap {
-        background: black;
-        color: white;
-        font-size: 36px;
-        padding: 10px;
+        position: fixed;
+        width: 100%;
+        padding: 10px 10px 0;
+        margin-left: 10px;
+        z-index: 1;
+        border-bottom: 1px solid $app-theme-base;
+
+        .blog-title {
+            font-size: 36px;
+        }
+
+        .links {
+            text-align: center;
+            .link-item {
+                text-decoration: underline;
+                display: block;
+                padding-top: 15px;
+                cursor: pointer;
+                &:hover {
+                    color: $app-theme-base;
+                }
+            }
+        }
     }
 </style>

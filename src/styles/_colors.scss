@@ -3,11 +3,7 @@ $panel-border: #CBCBCB;
 $page-bg: #EFEFEF;
 $panel-background: #F3F3F3;
 
-$app-theme-base: #2196f3;
+$app-theme-base: #1c7ac2;
 $app-theme-highlight: lighten($app-theme-base, 5%);
 $app-theme-lowlight: darken($app-theme-base, 5%);
 $app-theme-light: lighten($app-theme-base, 10%);
-
-$app-theme-safe: #26a71d;
-$app-theme-warn: #ce770d;
-$app-theme-danger: #ce130c;

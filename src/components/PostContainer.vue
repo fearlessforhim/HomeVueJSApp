@@ -21,14 +21,18 @@
             }
         },
         mounted() {
-            this.axios.get("http://localhost:8000/getPosts")
+            this.axios.get("http://localhost:8000/blog/getPosts")
             .then((response) => {
-                this.posts = response.data;
+                this.posts = response.data.map(p => Object.assign(p, {content: p.content.replace(/(?:\r\n|\r|\n)/g, '<br>')}));
             });
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+    /deep/ .post-item + .post-item {
+        margin-top: 40px;
+    }
 
 </style>
