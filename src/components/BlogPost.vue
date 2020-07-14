@@ -5,7 +5,7 @@
             <div class="date-created">{{post.dateCreated | moment('MMMM DD, YYYY')}}</div>
         </div>
         <div class="post-content">
-            <p v-html="post.content"></p>
+            <p v-html="formattedContent"></p>
         </div>
     </div>
 </template>
@@ -18,14 +18,18 @@
                 type: Object,
                 required: true
             }
+        },
+        computed: {
+            formattedContent() {
+                return this.post.content.replace(/(?:\r\n|\r|\n)/g, '<br>')
+            }
         }
     }
 </script>
 
 <style scoped lang="scss">
     .post-item {
-        width: 800px;
-        margin: auto;
+        margin: 0 90px 0 0;
 
         .post-title {
             font-size: 24px;

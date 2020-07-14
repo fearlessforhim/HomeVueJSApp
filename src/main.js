@@ -7,6 +7,7 @@ import VueMoment from 'vue-moment'
 import Row from "@/components/common/Row";
 import Cell from "@/components/common/Cell";
 import Button from "@/components/common/Button";
+import router from './router'
 
 Vue.config.productionTip = false;
 
@@ -18,5 +19,6 @@ Vue.use(VueMoment);
 Vue.use(VueAxios, axios);
 
 new Vue({
-    render: h => h(App),
+    router,
+    render: h => h(App)
 }).$mount('#app');

@@ -1,18 +1,18 @@
 <template>
     <div id="app">
         <PageHeader/>
-        <ContentContainer/>
+        <div class="page-container">
+            <router-view/>
+        </div>
     </div>
 </template>
 
 <script>
     import PageHeader from "./components/PageHeader";
-    import ContentContainer from "./components/ContentContainer";
 
     export default {
         name: 'App',
         components: {
-            ContentContainer,
             PageHeader
         }
     }
@@ -22,10 +22,8 @@
     #app {
         font-family: Avenir, Helvetica, Arial, sans-serif;
 
-        .page-wrap {
-            border: 1px solid $panel-border;
-            padding: 5px;
-            background: $page-bg;
+        .page-container {
+            padding: 90px;
         }
     }
 </style>

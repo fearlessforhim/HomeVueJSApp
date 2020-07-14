@@ -1,5 +1,5 @@
 <template>
-    <div class="content-container">
+    <div class="main-blog-wrap">
         <j-row>
             <j-cell
                     :c="9"
@@ -16,16 +16,13 @@
 </template>
 
 <script>
-    import SidePanel from "./SidePanel";
-    import PostContainer from "./PostContainer";
+    import SidePanel from "./components/SidePanel";
+    import PostContainer from "./components/PostContainer";
     export default {
-        name: "ContentContainer",
+        name: "MainBlog",
         components: {PostContainer, SidePanel}
     }
 </script>
 
 <style scoped lang="scss">
-    .content-container {
-        padding: 90px;
-    }
 </style>
