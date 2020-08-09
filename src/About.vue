@@ -17,7 +17,7 @@
             }
         },
         mounted() {
-            this.axios.get("http://localhost:8000/blog/getAbout")
+            this.axios.get("/api/blog/getAbout")
                 .then((response) => {
                     let data = response.data;
                     this.aboutMe = Object.assign(data, {
