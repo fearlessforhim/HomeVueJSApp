@@ -21,8 +21,8 @@
             return {
                 connections: [
                     {
-                        faIcon: 'fa-linkedin',
-                        text: 'Jonathan Cameron',
+                        faIcon: 'fa-twitter',
+                        text: '@jr_cameron',
                         onClick: () => {window.open('https://twitter.com/jr_cameron')}
                     },{
                         faIcon: 'fa-at',
