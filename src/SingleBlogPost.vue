@@ -17,10 +17,21 @@
 
 <script>
     import SidePanel from "./components/SidePanel";
-    import PostContainer from "./components/PostContainer";
     export default {
         name: "SingleBlogPost",
-        components: {PostContainer, SidePanel}
+        components: {SidePanel},
+        data() {
+            return {
+                post: {}
+            }
+        },
+        mounted() {
+            console.log(this.$route.query.id);
+            this.axios.get(`/api/blog/getPost?id=${this.$route.query.id}`)
+                .then((response) => {
+                    this.post = response.data;
+                });
+        }
     }
 </script>
 

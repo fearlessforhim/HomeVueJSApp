@@ -1,7 +1,12 @@
 <template>
     <div class="post-item">
         <div class="post-title-wrap">
-            <span class="post-title">{{post.title}}</span>
+            <span
+                    class="post-title"
+                    @click="titleClicked"
+            >
+                {{post.title}}
+            </span>
             <div class="date-created">{{post.dateCreated | moment('MMMM DD, YYYY')}}</div>
         </div>
         <div class="post-content">
@@ -21,7 +26,15 @@
         },
         computed: {
             formattedContent() {
-                return this.post.content.replace(/(?:\r\n|\r|\n)/g, '<br>')
+                if (this.post.content) {
+                    return this.post.content.replace(/(?:\r\n|\r|\n)/g, '<br>')
+                }
+                return '';
+            }
+        },
+        methods: {
+            titleClicked() {
+                window.location = `/blog/post?id=${this.post.id}`
             }
         }
     }

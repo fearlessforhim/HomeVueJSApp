@@ -14,12 +14,12 @@
                         <div class="c6"></div>
                         <div class="c3">
                             <span class="link-item">
-                                <router-link to="/">Blog</router-link>
+                                <router-link to="/blog">Blog</router-link>
                             </span>
                         </div>
                         <div class="c3">
                             <span class="link-item">
-                                <router-link to="/about">About</router-link>
+                                <router-link to="/blog/about">About</router-link>
                             </span>
                         </div>
                     </div>

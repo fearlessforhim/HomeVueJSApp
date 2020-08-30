@@ -6,31 +6,34 @@ import SingleBlogPost from "../SingleBlogPost";
 
 Vue.use(VueRouter)
 
-  const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: MainBlog
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: About
-  },
+const routes = [
     {
-      path: 'blog',
-      name: 'Blog Post',
-      component: SingleBlogPost
+        path: '/',
+        redirect: '/blog',
+        name: 'Home',
+        component: MainBlog
+    },
+    {
+        path: '/blog',
+        name: 'Home',
+        component: MainBlog
+    },
+    {
+        path: '/blog/about',
+        name: 'About',
+        component: About
+    },
+    {
+        path: '/blog/post',
+        name: 'Blog Post',
+        component: SingleBlogPost
     }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
 })
 
 export default router
