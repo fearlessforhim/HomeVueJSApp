@@ -28,7 +28,7 @@
     }
 
     @media only screen and (max-width: 600px) {
-        .page-container {
+        #app .page-container {
             padding: 90px 0;
         }
     }

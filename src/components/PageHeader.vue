@@ -75,10 +75,10 @@
     @media only screen and (max-width: 600px) {
         .header-wrap {
             position: fixed;
-            /* width: 100%; */
             left: 0;
             right: 0;
             padding: 10px;
+            margin-left: 0;
             z-index: 1;
             border-bottom: 1px solid #1c7ac2;
             background: #efefef;
