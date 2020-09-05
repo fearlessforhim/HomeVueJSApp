@@ -69,4 +69,15 @@
             padding-top: 10px;
         }
     }
+
+    @media only screen and (max-width: 600px) {
+        .post-item {
+            margin: 0;
+            padding: 10px;
+
+            .post-content {
+                font-size: 20px;
+            }
+        }
+    }
 </style>

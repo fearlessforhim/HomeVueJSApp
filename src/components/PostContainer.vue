@@ -10,6 +10,7 @@
 
 <script>
     import BlogPost from "./BlogPost";
+
     export default {
         name: "PostContainer",
         components: {
@@ -22,9 +23,9 @@
         },
         mounted() {
             this.axios.get("/api/blog/getPosts")
-            .then((response) => {
-                this.posts = response.data;
-            });
+                .then((response) => {
+                    this.posts = response.data;
+                });
         }
     }
 </script>
@@ -33,6 +34,13 @@
 
     /deep/ .post-item + .post-item {
         margin-top: 40px;
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        /deep/ .post-item + .post-item {
+            margin-top: 0;
+        }
     }
 
 </style>
