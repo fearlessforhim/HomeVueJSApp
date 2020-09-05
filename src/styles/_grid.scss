@@ -49,7 +49,7 @@
     $columns: 12;
 
     @for $i from 1 through $columns {
-      > .c#{$i} {
+      > .mc#{$i} {
         @extend %mc;
         width: (100% / $columns) * $i;
       }

@@ -4,7 +4,9 @@
             <j-cell
                     :c="9"
             >
-                <div>Here's the post!</div>
+                <BlogPost
+                        :post="post"
+                />
             </j-cell>
             <j-cell
                     :c="3"
@@ -17,16 +19,17 @@
 
 <script>
     import SidePanel from "./components/SidePanel";
+    import BlogPost from "./components/BlogPost";
+
     export default {
         name: "SingleBlogPost",
-        components: {SidePanel},
+        components: {BlogPost, SidePanel},
         data() {
             return {
                 post: {}
             }
         },
         mounted() {
-            console.log(this.$route.query.id);
             this.axios.get(`/api/blog/getPost?id=${this.$route.query.id}`)
                 .then((response) => {
                     this.post = response.data;

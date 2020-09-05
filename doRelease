@@ -1,0 +1,4 @@
+npm run build
+git -C ./dist/home-vue-js-dist/ add --all
+git -C ./dist/home-vue-js-dist/ commit -m "${1}"
+git -C ./dist/home-vue-js-dist/ push
