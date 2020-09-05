@@ -43,6 +43,8 @@
 <style scoped lang="scss">
     .post-item {
         margin: 0 90px 0 0;
+        max-height: 300px;
+        overflow: hidden;
 
         .post-title {
             font-size: 24px;
