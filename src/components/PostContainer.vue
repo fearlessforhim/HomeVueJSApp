@@ -22,7 +22,7 @@
             }
         },
         mounted() {
-            this.axios.get("/api/blog/getPosts")
+            this.axios.get("/api/blog/getLatestPosts")
                 .then((response) => {
                     this.posts = response.data;
                 })
