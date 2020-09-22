@@ -40,6 +40,9 @@
                             finalIndex = result.index
                         }
                     }
+                    if (finalIndex === 0) {
+                        return content.replace(regex, '<br>');
+                    }
                     return content.substring(0, finalIndex).replace(regex, '<br>') + '..'
                 }
                 return '';
