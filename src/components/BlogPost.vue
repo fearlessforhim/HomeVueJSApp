@@ -11,6 +11,11 @@
         </div>
         <div class="post-content">
             <p v-html="formattedContent"></p>
+            <div class="more-link"
+                 @click="titleClicked"
+            >
+                Continue Reading...
+            </div>
         </div>
     </div>
 </template>
@@ -26,8 +31,16 @@
         },
         computed: {
             formattedContent() {
-                if (this.post.content) {
-                    return this.post.content.replace(/(?:\r\n|\r|\n)/g, '<br>')
+                let content = this.post.content;
+                if (content) {
+                    let regex = /(?:\r\n|\r|\n)/g;
+                    let result, finalIndex = 0;
+                    while ((result = regex.exec(content)) && finalIndex === 0) {
+                        if (result.index >= 1000) {
+                            finalIndex = result.index
+                        }
+                    }
+                    return content.substring(0, finalIndex).replace(regex, '<br>') + '..'
                 }
                 return '';
             }
@@ -58,8 +71,16 @@
             padding: 10px;
 
             > p {
-                line-height: 24px;
+                line-height: 26px;
                 text-align: justify;
+                font-size: 18px
+            }
+
+            .more-link {
+                font-style: italic;
+                color: blue;
+                cursor: pointer;
+                text-decoration: underline;
             }
         }
 

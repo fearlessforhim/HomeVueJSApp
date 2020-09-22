@@ -4,9 +4,19 @@
             <j-cell
                     :c="9"
             >
-                <BlogPost
-                        :post="post"
-                />
+                <div class="single-post-item">
+                    <div class="post-title-wrap">
+            <span
+                    class="post-title"
+            >
+                {{post.title}}
+            </span>
+                        <div class="date-created">{{post.dateCreated | moment('MMMM DD, YYYY')}}</div>
+                    </div>
+                    <div class="post-content">
+                        <p v-html="formattedContent"></p>
+                    </div>
+                </div>
             </j-cell>
             <j-cell
                     :c="3"
@@ -19,14 +29,21 @@
 
 <script>
     import SidePanel from "./components/SidePanel";
-    import BlogPost from "./components/BlogPost";
 
     export default {
         name: "SingleBlogPost",
-        components: {BlogPost, SidePanel},
+        components: {SidePanel},
         data() {
             return {
                 post: {}
+            }
+        },
+        computed: {
+            formattedContent() {
+                if(this.post.content) {
+                    return this.post.content.replace(/(?:\r\n|\r|\n)/g, '<br>');
+                }
+                return '';
             }
         },
         mounted() {
