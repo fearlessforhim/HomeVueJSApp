@@ -11,7 +11,7 @@
             >
                 {{post.title}}
             </span>
-                        <div class="date-created">{{post.dateCreated | moment('MMMM DD, YYYY')}}</div>
+                        <div class="date-created">{post.dateCreated}</div>
                     </div>
                     <div class="post-content">
                         <p v-html="formattedContent"></p>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-    import SidePanel from "./components/SidePanel";
+    import SidePanel from "./components/SidePanel.vue";
 
     export default {
         name: "SingleBlogPost",

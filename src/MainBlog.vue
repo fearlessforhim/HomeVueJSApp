@@ -16,8 +16,8 @@
 </template>
 
 <script>
-    import SidePanel from "./components/SidePanel";
-    import PostContainer from "./components/PostContainer";
+    import SidePanel from "./components/SidePanel.vue";
+    import PostContainer from "./components/PostContainer.vue";
     export default {
         name: "MainBlog",
         components: {PostContainer, SidePanel}

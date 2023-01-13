@@ -1,24 +1,18 @@
-import Vue from 'vue'
-import App from './App.vue'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
-import VueMoment from 'vue-moment'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
 
-import Row from "@/components/common/Row";
-import Cell from "@/components/common/Cell";
-import Button from "@/components/common/Button";
-import router from './router'
+import Row from "./components/common/Row.vue";
+import Cell from "./components/common/Cell.vue";
+import Button from "./components/common/Button.vue";
 
-Vue.config.productionTip = false;
+import './assets/main.css';
 
-Vue.component('j-row', Row);
-Vue.component('j-cell', Cell);
-Vue.component('j-btn', Button);
 
-Vue.use(VueMoment);
-Vue.use(VueAxios, axios);
+const app = createApp(App);
 
-new Vue({
-    router,
-    render: h => h(App)
-}).$mount('#app');
+app.use(router);
+app.component('j-row', Row);
+app.component('j-cell', Cell);
+app.component('j-btn', Button);
+app.mount("#app");

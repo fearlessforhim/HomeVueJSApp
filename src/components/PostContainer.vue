@@ -9,7 +9,8 @@
 </template>
 
 <script>
-    import BlogPost from "./BlogPost";
+    import BlogPost from "./BlogPost.vue";
+    import axios from "axios"
 
     export default {
         name: "PostContainer",
@@ -22,13 +23,14 @@
             }
         },
         mounted() {
-            this.axios.get("/api/blog/getLatestPosts")
+            axios.get("/api/blog/getLatestPosts")
                 .then((response) => {
                     this.posts = response.data;
                 })
                 .catch(() => {
                     this.posts = [
                         {
+                            id: 0,
                             title: "Test Title",
                             dateCreated: new Date(),
                             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac bibendum turpis. Nullam magna justo, molestie a faucibus in, tempus vitae metus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque malesuada felis nec ultricies lacinia. Sed id dictum lectus, nec accumsan lectus. Nam sodales lacinia ex, vel mollis sapien condimentum ullamcorper. Sed id quam ante.\n' +
@@ -49,13 +51,13 @@
 
 <style scoped lang="scss">
 
-    /deep/ .post-item + .post-item {
+    .post-item + .post-item {
         margin-top: 40px;
     }
 
     @media only screen and (max-width: 600px) {
 
-        /deep/ .post-item + .post-item {
+        .post-item + .post-item {
             margin-top: 0;
         }
     }

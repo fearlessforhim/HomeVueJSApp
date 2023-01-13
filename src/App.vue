@@ -1,35 +1,35 @@
 <template>
-    <div id="app">
-        <PageHeader/>
-        <div class="page-container">
-            <router-view/>
-        </div>
-    </div>
+  <div id="app">
+      <PageHeader/>
+      <div class="page-container">
+          <router-view/>
+      </div>
+  </div>
 </template>
 
 <script>
-    import PageHeader from "./components/PageHeader";
+  import PageHeader from "./components/PageHeader.vue";
 
-    export default {
-        name: 'App',
-        components: {
-            PageHeader
-        }
-    }
+  export default {
+      name: 'App',
+      components: {
+          PageHeader
+      }
+  }
 </script>
 
 <style lang="scss">
-    #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
+  #app {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
 
-        .page-container {
-            padding: 90px;
-        }
-    }
+      .page-container {
+          padding: 90px;
+      }
+  }
 
-    @media only screen and (max-width: 600px) {
-        #app .page-container {
-            padding: 90px 0;
-        }
-    }
+  @media only screen and (max-width: 600px) {
+      #app .page-container {
+          padding: 90px 0;
+      }
+  }
 </style>

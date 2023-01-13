@@ -7,7 +7,7 @@
             >
                 {{post.title}}
             </span>
-            <div class="date-created">{{post.dateCreated | moment('MMMM DD, YYYY')}}</div>
+            <div class="date-created">{{format(new Date(), 'yyyy-MM-dd')}}</div>
         </div>
         <div class="post-content">
             <p v-html="formattedContent"></p>
@@ -21,6 +21,9 @@
 </template>
 
 <script>
+
+    import {format} from "date-fns"
+
     export default {
         name: "BlogPost",
         props: {
@@ -51,6 +54,11 @@
         methods: {
             titleClicked() {
                 window.location = `/blog/post?id=${this.post.id}`
+            }
+        },
+        data() {
+            return {
+                format,
             }
         }
     }

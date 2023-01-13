@@ -1,19 +1,18 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import About from "../About";
-import MainBlog from "../MainBlog";
-import SingleBlogPost from "../SingleBlogPost";
+import About from "../About.vue";
+import MainBlog from "../MainBlog.vue";
 
-Vue.use(VueRouter)
+import { createRouter, createWebHistory } from "vue-router";
 
-const routes = [
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
     {
         path: '/',
         redirect: '/blog',
         name: 'Home',
         component: MainBlog
     },
-    {
+        {
         path: '/blog',
         name: 'Home',
         component: MainBlog
@@ -22,18 +21,8 @@ const routes = [
         path: '/blog/about',
         name: 'About',
         component: About
-    },
-    {
-        path: '/blog/post',
-        name: 'Blog Post',
-        component: SingleBlogPost
     }
-]
+  ],
+});
 
-const router = new VueRouter({
-    mode: 'history',
-    base: process.env.BASE_URL,
-    routes
-})
-
-export default router
+export default router;

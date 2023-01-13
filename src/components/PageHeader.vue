@@ -5,7 +5,7 @@
         <Row>
             <div class="c8">
                 <div class="blog-title">
-                    Four In Faith
+                    Cam Cam Fam Fam Blog
                 </div>
             </div>
             <div class="c3">
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-    import Row from "./common/Row";
+    import Row from "./common/Row.vue";
 
     export default {
         name: "PageHeader",
@@ -73,7 +73,6 @@
         position: fixed;
         width: 100%;
         padding: 10px 10px 0;
-        margin-left: 10px;
         z-index: 1;
         border-bottom: 1px solid $app-theme-base;
         background: $page-bg;
