@@ -1,5 +1,6 @@
 import About from "../About.vue";
 import MainBlog from "../MainBlog.vue";
+import Clock from "../components/clock/Clock.vue"
 
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -8,9 +9,13 @@ const router = createRouter({
   routes: [
     {
         path: '/',
-        redirect: '/blog',
-        name: 'Home',
-        component: MainBlog
+        redirect: '/clack',
+        name: 'Home'
+    },
+    {
+      path: '/clock',
+      name: 'Clock',
+      component: Clock
     },
         {
         path: '/blog',

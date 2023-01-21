@@ -1,4 +1,5 @@
 <template>
+    <PageHeader/>
     <div class="main-blog-wrap">
         <j-row>
             <j-cell
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+    import PageHeader from "./components/PageHeader.vue"
     import SidePanel from "./components/SidePanel.vue";
     import PostContainer from "./components/PostContainer.vue";
     export default {
