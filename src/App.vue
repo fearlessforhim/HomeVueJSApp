@@ -20,10 +20,6 @@
 <style lang="scss">
   #app {
       font-family: Avenir, Helvetica, Arial, sans-serif;
-
-      .page-container {
-          padding: 90px;
-      }
   }
 
   @media only screen and (max-width: 600px) {

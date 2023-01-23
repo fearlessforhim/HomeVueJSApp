@@ -1,5 +1,8 @@
 <template>
     <div class="clock-wrap" :key="renderTime">
+      <NumbersContainer/>
+      <div class="hands-wrap">
+
         <svg :style="{fill: 'none', 'strokeWidth': 40}" width="100%" height="100%" viewBox='0 0 400 400'>
              <path v-for="arc in arcData.arcs"
              :id="arc.id"
@@ -35,13 +38,16 @@
           stroke-linecap="round"
         />
           </svg>
+      </div>
     </div>
 </template>
 
 <script>
-    import {svgArcBuilder} from './svg-arc-builder.js'
+    import {svgArcBuilder} from './svg-arc-builder.js';
+    import NumbersContainer from './NumbersContainer.vue';
     export default {
         name: "Clock",
+        components: {NumbersContainer},
         data() {
           return {
             timer: null,
@@ -88,4 +94,10 @@
 </script>
 
 <style scoped lang="scss">
+.clock-wrap {
+background: black;
+  .hands-wrap {
+    margin: 0 25%;
+  }
+}
 </style>
