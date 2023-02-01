@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .r {
   margin-left: -5px;
   margin-right: -5px;
@@ -25,7 +27,7 @@
   @for $i from 1 through $columns {
     > .c#{$i} {
     @extend %c;
-      width: (100% / $columns) * $i;
+      width: math.div(100%, $columns) * $i;
     }
   }
 
@@ -51,7 +53,7 @@
     @for $i from 1 through $columns {
       > .mc#{$i} {
         @extend %mc;
-        width: (100% / $columns) * $i;
+        width: math.div(100%, $columns) * $i;
       }
     }
   }

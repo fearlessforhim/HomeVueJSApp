@@ -4,40 +4,40 @@
       <div class="hands-wrap">
 
         <svg :style="{fill: 'none', 'strokeWidth': 40}" width="100%" height="100%" viewBox='0 0 400 400'>
-             <path v-for="arc in arcData.arcs"
-             :id="arc.id"
-             :d="arc.path"
-             :stroke="arc.color"
-             :strokeLinecap="arc.rounded ? 'round' : ''"
-             />
-        <line
-          x1="200"
-          y1="200"
-          x2="200"
-          y2="75"
-          :style="{stroke: '#AAA', 'strokeWidth': 20}"
-          :transform="`rotate(${hourHandDegrees} 200 200)`"
-          stroke-linecap="round"
-        />
-        <line
-         x1="200"
-         y1="200"
-          x2="200"
-          y2="20"
-          :style="{stroke: 'orange', 'strokeWidth': 10}"
-          :transform="`rotate(${minuteHandDegrees} 200 200)`"
-          stroke-linecap="round"
-        />
-        <line
-         x1="200"
-         y1="200"
-          x2="200"
-          y2="20"
-          :style="{stroke: '#B9B9B9', 'strokeWidth': 1.5}"
-          :transform="`rotate(${secondHandDegrees} 200 200)`"
-          stroke-linecap="round"
-        />
-          </svg>
+          <path v-for="arc in arcData.arcs"
+          :id="arc.id"
+          :d="arc.path"
+          :stroke="arc.color"
+          :strokeLinecap="arc.rounded ? 'round' : ''"
+          />
+          <line
+            :x1="200"
+            :y1="200"
+            :x2="200"
+            :y2="75"
+            :style="{stroke: '#AAA', 'strokeWidth': 20}"
+            :transform="`rotate(${hourHandDegrees} 200 200)`"
+            stroke-linecap="round"
+          />
+          <line
+          :x1="200"
+          :y1="200"
+            :x2="200"
+            :y2="20"
+            :style="{stroke: 'orange', 'strokeWidth': 10}"
+            :transform="`rotate(${minuteHandDegrees} 200 200)`"
+            stroke-linecap="round"
+          />
+          <line
+          :x1="200"
+          :y1="200"
+            :x2="200"
+            :y2="20"
+            :style="{stroke: '#B9B9B9', 'strokeWidth': 1.5}"
+            :transform="`rotate(${secondHandDegrees} 200 200)`"
+            stroke-linecap="round"
+          />
+        </svg>
       </div>
     </div>
 </template>
@@ -52,7 +52,7 @@
           return {
             timer: null,
             renderTime: new Date(),
-            wakeHour: 8,
+            wakeHour: 6,
             wakeMinute: 30
           }
         },
@@ -72,11 +72,13 @@
           },
           arcData() {
             const arcBuilder = svgArcBuilder();
+            console.log('Minutes from midnight')
+            console.log((this.renderTime.getHours()*60) + this.renderTime.getMinutes());
             arcBuilder.addConfig({startDegrees: 0, lengthInDegrees: (59.99999/60) * 360, color: 'gray', rounded: false});
             if(this.renderTime.getHours()%12 === this.wakeHour){
 
             }else if (this.renderTime.getHours()%12 === this.wakeHour + 1){
-              arcBuilder.addConfig({startDegrees: (40/60) * 360, lengthInDegrees: (20/60) * 360, color: 'gray', rounded: false});
+              arcBuilder.addConfig({startDegrees: (0/60) * 360, lengthInDegrees: (30/60) * 360, color: 'red', rounded: false});
               arcBuilder.addConfig({startDegrees: (0/60) * 360, lengthInDegrees: (30/60) * 360, color: 'red', rounded: false});
             }
             return {
