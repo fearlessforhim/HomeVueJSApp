@@ -18,8 +18,16 @@
 </script>
 
 <style lang="scss">
+    html, body, #app {
+        height: 100%;
+    }
   #app {
       font-family: Avenir, Helvetica, Arial, sans-serif;
+      height: 100%;
+  }
+
+  .page-container {
+    height: 100%;
   }
 
   @media only screen and (max-width: 600px) {

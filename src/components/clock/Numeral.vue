@@ -20,7 +20,7 @@
     transform-origin: 0 40px;
     text-align: right;
     position: absolute;
-    top: 360px;
+    top: 380px;
     left: 50%;
     width: 320px;
     height: 80px;

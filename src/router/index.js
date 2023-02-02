@@ -1,6 +1,6 @@
 import About from "../About.vue";
 import MainBlog from "../MainBlog.vue";
-import Clock from "../components/clock/Clock.vue"
+import ClockAndBudget from "../components/ClockAndBudget.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -26,7 +26,7 @@ const router = createRouter({
     {
       path: '/clock',
       name: 'Clock',
-      component: Clock
+      component: ClockAndBudget
     },
         {
         path: '/blog',

@@ -4,13 +4,13 @@ import { faSun, faTshirt, faBowlFood, faTooth, faCarSide } from '@fortawesome/fr
 export function arcDictionary() {
     return [
         {//wake up bar
-            showTime: new Date().setHours(15, 0, 0, 0),
-            stopTime: new Date().setHours(15, 45, 0, 0),
+            showTime: new Date().setHours(10, 0, 0, 0),
+            stopTime: new Date().setHours(11, 45, 0, 0),
             arcConfig: {startDegrees: (30/60) * 360, lengthInDegrees: (10/60) * 360, color: 'yellow', rounded: false},
             textLabel: {
                 position: {
-                    top: '650px',
-                    left: '300px'
+                    bottom: '0px',
+                    left: '0px'
                 },
                 text: 'Wake Up!',
                 icon: faSun,
@@ -18,13 +18,13 @@ export function arcDictionary() {
             }
         },
         {//get dressed bar
-            showTime: new Date().setHours(15, 0, 0, 0),
-            stopTime: new Date().setHours(16, 0, 0, 0),
+            showTime: new Date().setHours(10, 0, 0, 0),
+            stopTime: new Date().setHours(11, 0, 0, 0),
             arcConfig: {startDegrees: (40/60) * 360, lengthInDegrees: (20/60) * 360, color: 'green', rounded: false},
             textLabel: {
                 position: {
-                    top: '75px',
-                    left: '250px'
+                    top: '50px',
+                    left: '0px'
                 },
                 text: 'Get Dressed!',
                 icon: faTshirt,
@@ -32,13 +32,13 @@ export function arcDictionary() {
             }
         },
         {//eat and shoes bar
-            showTime: new Date().setHours(15, 45, 0, 0),
-            stopTime: new Date().setHours(17, 0, 0, 0),
+            showTime: new Date().setHours(10, 45, 0, 0),
+            stopTime: new Date().setHours(12, 0, 0, 0),
             arcConfig: {startDegrees: (0/60) * 360, lengthInDegrees: (30/60) * 360, color: 'red', rounded: false},
             textLabel: {
                 position: {
-                    top: '75px',
-                    left: '1200px'
+                    top: '50px',
+                    right: '0px'
                 },
                 text: 'Eat / Shoes On',
                 icon: faBowlFood,
@@ -46,8 +46,8 @@ export function arcDictionary() {
             }
         },
         {//brush teeth bar
-            showTime: new Date().setHours(16, 0, 0, 0),
-            stopTime: new Date().setHours(17, 0, 0, 0),
+            showTime: new Date().setHours(11, 0, 0, 0),
+            stopTime: new Date().setHours(12, 0, 0, 0),
             arcConfig: {startDegrees: (30/60) * 360, lengthInDegrees: (10/60) * 360, color: '#E600FF', rounded: false},
             textLabel: {
                 position: {
@@ -60,8 +60,8 @@ export function arcDictionary() {
             }
         },
         {//to the car bar
-            showTime: new Date().setHours(16, 0, 0, 0),
-            stopTime: new Date().setHours(17, 0, 0, 0),
+            showTime: new Date().setHours(11, 0, 0, 0),
+            stopTime: new Date().setHours(12, 0, 0, 0),
             arcConfig: {startDegrees: (40/60) * 360, lengthInDegrees: (10/60) * 360, color: 'orange', rounded: false},
             textLabel: {
                 position: {
