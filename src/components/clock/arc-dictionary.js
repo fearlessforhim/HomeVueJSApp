@@ -5,7 +5,7 @@ export function arcDictionary() {
     return [
         {//wake up bar
             showTime: new Date().setHours(10, 0, 0, 0),
-            stopTime: new Date().setHours(11, 45, 0, 0),
+            stopTime: new Date().setHours(10, 45, 0, 0),
             arcConfig: {startDegrees: (30/60) * 360, lengthInDegrees: (10/60) * 360, color: 'yellow', rounded: false},
             textLabel: {
                 position: {
@@ -51,8 +51,8 @@ export function arcDictionary() {
             arcConfig: {startDegrees: (30/60) * 360, lengthInDegrees: (10/60) * 360, color: '#E600FF', rounded: false},
             textLabel: {
                 position: {
-                    top: '650px',
-                    left: '375px'
+                    bottom: '0px',
+                    left: '0px'
                 },
                 text: 'Brush Teeth!',
                 icon: faTooth,
@@ -66,7 +66,7 @@ export function arcDictionary() {
             textLabel: {
                 position: {
                     top: '350px',
-                    left: '325px'
+                    left: '0px'
                 },
                 text: 'To the car!',
                 icon: faCarSide,

@@ -94,7 +94,7 @@
                         used: parseInt(numbers[0]),
                         total: parseInt(numbers[1])
                     }
-                });
+                }).filter(b => b);
 
                 console.log(budgets);
 
