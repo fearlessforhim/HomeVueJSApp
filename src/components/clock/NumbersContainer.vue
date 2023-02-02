@@ -1,6 +1,6 @@
 <template>
     <div class="numbers-container">
-        <Numeral
+         <Numeral
           text="12"
           :rotate="-90"
         />
@@ -62,9 +62,9 @@ import Numeral from "./Numeral.vue"
 
 <style scoped lang="scss">
 .numbers-container {
-  position: absolute;
   height: 100%;
   width: 100%;
+  position: absolute;
   top: 0;
 }
   

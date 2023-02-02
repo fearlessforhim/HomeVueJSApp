@@ -15,9 +15,14 @@ const router = createRouter({
   routes: [
     {
         path: '/',
-        redirect: '/clack',
+        redirect: '/clock',
         name: 'Home'
     },
+    {
+      path: '/*',
+      redirect: '/clock',
+      name: 'Home'
+  },
     {
       path: '/clock',
       name: 'Clock',
