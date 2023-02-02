@@ -112,12 +112,14 @@
     flex: 1;
     padding: 20px;
     color: white;
+    margin-left: 10px;
+    border-left: 1px solid gray;
 
     .budget-item {
         width: 100%;
 
         & + .budget-item {
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .budget-item-outer {
