@@ -116,9 +116,9 @@
           }
         },
         mounted() {
-          // this.timer = setInterval(() => {
-          //   this.renderTime = new Date();
-          // }, 100);
+          this.timer = setInterval(() => {
+            this.renderTime = new Date();
+          }, 100);
         }
 
     }

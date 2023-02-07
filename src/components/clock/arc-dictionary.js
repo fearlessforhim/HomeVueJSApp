@@ -2,7 +2,7 @@ import {svgArcBuilder} from './svg-arc-builder.js';
 import { faSun, faTshirt, faBowlFood, faTooth, faCarSide } from '@fortawesome/free-solid-svg-icons';
 
 export function arcDictionary() {
-    const hb = 15;
+    const hb = 6;
     return [
         {//wake up bar
             showTime: new Date().setHours(hb, 0, 0, 0),
