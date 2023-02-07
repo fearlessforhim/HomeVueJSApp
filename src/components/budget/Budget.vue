@@ -117,6 +117,7 @@
 
     .budget-item {
         width: 100%;
+	font-size: 30px;
 
         & + .budget-item {
             margin-top: 10px;
