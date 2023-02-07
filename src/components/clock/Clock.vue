@@ -41,18 +41,22 @@
       </div>
     </div>
     <div
-      class="text-container"
+      class="text-container-outer"
     >
       <div
-      v-for="t in arcData.text"
-      :id="t.iconKey"
-      :style="Object.assign({}, t.position)"
-      class="text-item"
+        class="text-container-inner"
       >
-        <div>{{ t.text }}</div>
-        <FontAwesomeIcon
-          :icon="t.icon"
-        />
+        <div
+        v-for="t in arcData.text"
+        :id="t.iconKey"
+        :style="Object.assign({}, t.position)"
+        class="text-item"
+        >
+          <div>{{ t.text }}</div>
+          <FontAwesomeIcon
+            :icon="t.icon"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -112,9 +116,9 @@
           }
         },
         mounted() {
-          this.timer = setInterval(() => {
-            this.renderTime = new Date();
-          }, 100);
+          // this.timer = setInterval(() => {
+          //   this.renderTime = new Date();
+          // }, 100);
         }
 
     }
@@ -124,21 +128,29 @@
 
 
 .clock-wrap {
-  flex: 2;
+  flex: 4;
   position: relative;
+  display: flex;
 
   .clock-display-container {
     width: 850px;
     margin: auto;
   }
 
-  .text-container {
+  .text-container-outer {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     text-align: center;
+    display: flex;
+
+    .text-container-inner {
+      width: 850px;
+      height: 850px;
+      margin: auto;
+    }
     .text-item {
       color: white;
       font-size: 50px;
@@ -146,9 +158,5 @@
       line-height: 30px;
     }
   }
-}
-
-.budget-wrap {
-  flex: 1;
 }
 </style>
