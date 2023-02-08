@@ -51,7 +51,7 @@ export function svgArcBuilder(opts) {
         _f_svg_ellipse_arc(
           [config.centerX || defaultOpts.centerX, config.centerY || defaultOpts.centerY],
           [config.radiusX || defaultOpts.radiusX, config.radiusY || defaultOpts.radiusY],
-          [_degToRad(config.startDegrees), _degToRad(config.lengthInDegrees)],
+          [_degToRad((config.startMinute/60) * 360), _degToRad((config.lengthInMinutes/60) * 360)],
           _degToRad(defaultOpts.baseLineRotationDegrees),
           config.color,
           config.id,

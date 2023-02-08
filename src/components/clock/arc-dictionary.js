@@ -1,27 +1,40 @@
 import {svgArcBuilder} from './svg-arc-builder.js';
-import { faSun, faTshirt, faBowlFood, faTooth, faCarSide } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faTshirt, faBowlFood, faTooth, faCarSide, faDumbbell, faBookBible } from '@fortawesome/free-solid-svg-icons';
 
 export function arcDictionary() {
     const hb = 6;
     return [
-        {//wake up bar
+        {//Bible study bar
             showTime: new Date().setHours(hb, 0, 0, 0),
             stopTime: new Date().setHours(hb, 45, 0, 0),
-            arcConfig: {startDegrees: (30/60) * 360, lengthInDegrees: (10/60) * 360, color: 'yellow', rounded: false},
+            arcConfig: {startMinute: 0, lengthInMinutes: 15, color: '#00D0E8', rounded: false},
+            textLabel: {
+                position: {
+                    top: '50px',
+                    right: '-40px'
+                },
+                text: 'Bible Study',
+                icon: faBookBible,
+                iconKey: 'bookBible'
+            }
+        },{//exercise bar
+            showTime: new Date().setHours(hb, 0, 0, 0),
+            stopTime: new Date().setHours(hb, 45, 0, 0),
+            arcConfig: {startMinute: 15, lengthInMinutes: 35, color: 'yellow', rounded: false},
             textLabel: {
                 position: {
                     bottom: '0px',
-                    left: '0px'
+                    right: '-40px'
                 },
-                text: 'Wake Up!',
-                icon: faSun,
-                iconKey: 'sun'
+                text: 'I work out!',
+                icon: faDumbbell,
+                iconKey: 'dumbbell'
             }
         },
         {//get dressed bar
             showTime: new Date().setHours(hb, 0, 0, 0),
             stopTime: new Date().setHours(hb+1, 0, 0, 0),
-            arcConfig: {startDegrees: (40/60) * 360, lengthInDegrees: (20/60) * 360, color: 'green', rounded: false},
+            arcConfig: {startMinute: 40, lengthInMinutes: 20, color: 'green', rounded: false},
             textLabel: {
                 position: {
                     top: '50px',
@@ -35,7 +48,7 @@ export function arcDictionary() {
         {//eat and shoes bar
             showTime: new Date().setHours(hb, 45, 0, 0),
             stopTime: new Date().setHours(hb+2, 0, 0, 0),
-            arcConfig: {startDegrees: (0/60) * 360, lengthInDegrees: (30/60) * 360, color: 'red', rounded: false},
+            arcConfig: {startMinute: 0, lengthInMinutes: 30, color: 'red', rounded: false},
             textLabel: {
                 position: {
                     top: '50px',
@@ -49,7 +62,7 @@ export function arcDictionary() {
         {//brush teeth bar
             showTime: new Date().setHours(hb+1, 0, 0, 0),
             stopTime: new Date().setHours(hb+2, 0, 0, 0),
-            arcConfig: {startDegrees: (30/60) * 360, lengthInDegrees: (10/60) * 360, color: '#E600FF', rounded: false},
+            arcConfig: {startMinute: 30, lengthInMinutes: 10, color: '#E600FF', rounded: false},
             textLabel: {
                 position: {
                     bottom: '0px',
@@ -63,7 +76,7 @@ export function arcDictionary() {
         {//to the car bar
             showTime: new Date().setHours(hb+1, 0, 0, 0),
             stopTime: new Date().setHours(hb+2, 0, 0, 0),
-            arcConfig: {startDegrees: (40/60) * 360, lengthInDegrees: (10/60) * 360, color: 'orange', rounded: false},
+            arcConfig: {startMinute: 40, lengthInMinutes: 10, color: '#C89700', rounded: false},
             textLabel: {
                 position: {
                     top: '350px',

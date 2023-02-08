@@ -98,7 +98,7 @@
             const arcBuilder = svgArcBuilder();
             const textConfigs = [];
 
-            arcBuilder.addConfig({startDegrees: 0, lengthInDegrees: (59.99999/60) * 360, color: 'gray', rounded: false});
+            arcBuilder.addConfig({startMinute: 0, lengthInMinutes: 59.99999, color: 'gray', rounded: false});
             
             this.arcDictionary
               .filter(d => this.renderTime.getTime() > d.showTime && this.renderTime.getTime() < d.stopTime)
