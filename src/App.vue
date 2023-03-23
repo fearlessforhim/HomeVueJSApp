@@ -29,7 +29,7 @@
   .page-container {
     height: 100%;
     background: white;
-    color: 111;
+    color: #575757;
   }
 
   @media only screen and (max-width: 600px) {
