@@ -79,6 +79,7 @@
 
         .blog-title {
             font-size: 36px;
+            color: black;
         }
 
         .hamburger {

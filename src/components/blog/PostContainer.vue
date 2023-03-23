@@ -32,7 +32,7 @@
                         {
                             id: 0,
                             title: "Test Title",
-                            dateCreated: new Date(),
+                            createdTime: new Date(),
                             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac bibendum turpis. Nullam magna justo, molestie a faucibus in, tempus vitae metus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque malesuada felis nec ultricies lacinia. Sed id dictum lectus, nec accumsan lectus. Nam sodales lacinia ex, vel mollis sapien condimentum ullamcorper. Sed id quam ante.\n' +
                                 '\n' +
                                 'Cras nec porttitor mi, interdum laoreet metus. Donec accumsan convallis congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque ullamcorper risus a pulvinar maximus. In ut condimentum sapien. Fusce vel egestas ipsum, nec gravida magna. Donec posuere malesuada nibh, porta vehicula purus congue nec. Sed vitae bibendum dolor, quis ultrices nibh. Praesent tempor magna suscipit, ultricies ante vel, feugiat magna. Nam vestibulum sapien et orci sollicitudin sodales. Pellentesque in dolor consequat diam eleifend vulputate sed et velit. Phasellus in mauris nec elit hendrerit posuere eget sodales nisl. Vestibulum ullamcorper elementum sodales. Nam dapibus, felis commodo volutpat vestibulum, tortor erat ornare turpis, eget malesuada magna dui ac diam. Phasellus vitae velit arcu. Curabitur ornare posuere facilisis.\n' +

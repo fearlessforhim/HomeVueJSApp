@@ -7,7 +7,7 @@
             >
                 {{post.title}}
             </span>
-            <div class="date-created">{{format(new Date(), 'yyyy-MM-dd')}}</div>
+            <div class="date-created">{{format(post.createdTime, 'yyyy-MM-dd')}}</div>
         </div>
         <div class="post-content">
             <p v-html="formattedContent"></p>
