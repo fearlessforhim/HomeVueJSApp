@@ -47,7 +47,7 @@
 </template>
 
 <script>
-    import Row from "./common/Row.vue";
+    import Row from "../common/Row.vue";
 
     export default {
         name: "PageHeader",

@@ -23,7 +23,7 @@
             }
         },
         mounted() {
-            axios.get("/api/blog/getLatestPosts")
+            axios.get("/proxy-api/blog/getLatestPosts")
                 .then((response) => {
                     this.posts = response.data;
                 })

@@ -1,5 +1,5 @@
 import About from "../About.vue";
-import MainBlog from "../MainBlog.vue";
+import MainBlog from "../components/blog/MainBlog.vue";
 import ClockAndBudget from "../components/ClockAndBudget.vue";
 
 import { createRouter, createWebHistory } from "vue-router";

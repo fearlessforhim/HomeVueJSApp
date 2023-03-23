@@ -17,14 +17,18 @@
 </template>
 
 <script>
-    import PageHeader from "./components/PageHeader.vue"
-    import SidePanel from "./components/SidePanel.vue";
-    import PostContainer from "./components/PostContainer.vue";
+    import PageHeader from "./PageHeader.vue"
+    import SidePanel from "./SidePanel.vue";
+    import PostContainer from "./PostContainer.vue";
     export default {
         name: "MainBlog",
-        components: {PostContainer, SidePanel}
+        components: {PostContainer, SidePanel, PageHeader}
     }
 </script>
 
 <style scoped lang="scss">
+
+.main-blog-wrap {
+    padding : 90px;
+}
 </style>

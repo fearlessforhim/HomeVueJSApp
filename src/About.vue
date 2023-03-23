@@ -7,7 +7,7 @@
 </template>
 
 <script>
-    import BlogPost from "./components/BlogPost.vue";
+    import BlogPost from "./components/blog/BlogPost.vue";
     export default {
         name: "About",
         components: {BlogPost},
