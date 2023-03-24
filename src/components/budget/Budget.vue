@@ -79,7 +79,7 @@
             }
           },
           async created() {
-            const response = await fetch('static/media/budget.txt');
+            const response = await fetch('assets/budget.txt');
             if(response.ok){
                 const text = await response.text();
 
