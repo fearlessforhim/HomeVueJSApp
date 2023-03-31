@@ -1,6 +1,7 @@
 import About from "../About.vue";
 import MainBlog from "../components/blog/MainBlog.vue";
 import ClockAndBudget from "../components/ClockAndBudget.vue";
+import BlockooLanding from "../components/blockoo/BlockooLanding.vue"
 
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -37,6 +38,11 @@ const router = createRouter({
         path: '/blog/about',
         name: 'About',
         component: About
+    },
+    {
+      path: '/blockoo',
+      name: 'Blockoo',
+      component: BlockooLanding
     }
   ],
 });
