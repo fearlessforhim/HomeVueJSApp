@@ -2,7 +2,7 @@ import {svgArcBuilder} from './svg-arc-builder.js';
 import { faSun, faTshirt, faBowlFood, faTooth, faCarSide, faDumbbell, faBookBible } from '@fortawesome/free-solid-svg-icons';
 
 export function arcDictionary() {
-    const hb = 6;
+    const hb = 15;
     return [
         {//Bible study bar
             showTime: new Date().setHours(hb, 0, 0, 0),

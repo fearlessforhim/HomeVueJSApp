@@ -1,41 +1,67 @@
 <template>
     <div class="blockoo-container">
         <div
-            class="board-display"
+            class="board-display-wrap"
         >
             <div
-            class="row"
-            v-for="(row, ridx) in boardState"
+                class="board-display"
             >
                 <div
-                    v-for="(cell, cidx) in row"
-                    class="cell"
-                    :style="{color: 'black', backgroundColor: players[parseInt(cell)]?.color}"
-                    @click="placePiece(cidx, ridx)"
-                ></div>
+                class="row"
+                v-for="(row, ridx) in boardState"
+                >
+                    <div
+                        class="cell-wrap"
+                        v-for="(cell, cidx) in row"
+                    >
+                        <div
+                            :class="`cell ${parseInt(cell) > -1 ? 'filled' : 'unfilled'}`"
+                            :style="{
+                                backgroundColor: parseInt(cell) > -1 ? players[parseInt(cell)].color : '#DEDEDE',
+                                borderColor: parseInt(cell) > -1 ? darken(players[parseInt(cell)]?.color) : '#444',
+                                borderStyle: 'solid',
+                                borderWidth: parseInt(cell) > -1 ? '2px' : '1px',
+                                boxShadow: parseInt(cell) > -1 ? 'none' : 'inset 2px 2px #AAA'
+
+                            }"
+                            @click="placePiece(cidx, ridx)"
+                        ></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div
             class="piece-player-control"
             v-if="!gameIsOver"
         >
-            <div
-                class="btn"
-                @click="incrementRotation()"
-            >
-                Rotate
-            </div>
-            <div
-                class="btn"
-                @click="toggleMirror()"
-            >
-                Mirror
-            </div>
-            <div
-                class="btn"
-                @click="finishPlayer()"
-            >
-                No more moves
+            <div class="player-actions">
+                <div
+                    class="btn"
+                    title="Rotate"
+                    @click="incrementRotation()"
+                >
+                    <font-awesome-icon
+                        icon="fa-solid fa-redo"
+                    />
+                </div>
+                <div
+                    class="btn"
+                    title="Mirror"
+                    @click="toggleMirror()"
+                >
+                    <font-awesome-icon
+                        icon="fa-solid fa-signs-post"
+                    />
+                </div>
+                <div
+                    class="btn"
+                    title="No more moves"
+                    @click="finishPlayer()"
+                >
+                    <font-awesome-icon
+                        icon="fa-solid fa-flag-checkered"
+                    />
+                </div>
             </div>
             <div>
                 Current Player: {{ players[this.activePlayer]?.color }}
@@ -108,10 +134,12 @@
 <script>
 import axios from "axios";
 import PieceExampleDisplay from "./PieceExampleDisplay.vue";
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import tinycolor from "tinycolor2";
 
 export default {
     name: "Blockoo",
-    components: [PieceExampleDisplay],
+    components: {PieceExampleDisplay, FontAwesomeIcon},
     data() {
         return {
             boardState: [],
@@ -190,6 +218,9 @@ export default {
         async performGameReset() {
             const response = await axios.post("http://localhost:8000/blockoo/gameAction/0/gameReset/")
             this.loadState();
+        },
+        darken(color){
+            return tinycolor(color).darken(15).toString();
         }
     },
     mounted() {
@@ -201,6 +232,18 @@ export default {
   
 <style scoped lang="scss">
 
+.player-actions {
+    display: flex;
+
+    > div {
+        flex: 1;
+
+        & + div {
+            margin-left: 10px;
+        }
+    }
+}
+
 .btn {
     background-color: rgb(57, 57, 228);
     color: white;
@@ -209,22 +252,26 @@ export default {
     border: 1px solid black;
     border-radius: 3px;
     cursor: pointer;
+    text-align: center;
     
     &:hover {
         background-color: rgb(38, 38, 139);
-    }
-    & + .btn {
-        margin-top: 10px;
     }
 }
 
 .blockoo-container {
     padding: 10px;
-
     display: flex;
 
     > div + div {
         margin-left: 10px;
+    }
+
+    .board-display {
+        border-top: 10px solid lightgrey;
+        border-left: 10px solid gray;
+        border-right: 10px solid rgb(228, 228, 228);
+        border-bottom: 10px solid rgb(165, 165, 165);
     }
 }
 
@@ -240,16 +287,36 @@ export default {
     display: flex;
 
     & + .row {
-        margin-top: 2px
+        // margin-top: 2px
+    }
+
+    .cell-wrap {
+        height: 36px;
+        width: 36px;
+        // border-left: 1px solid black;
+        // border-top: 1px solid black;
+
+        &:last-of-type {
+            // border-right: 1px solid black;
+        }
     }
 
     .cell {
-        padding: 15px;
-        border: 1px solid black;
+        width: 100%;
+        height: 100%;
+        // padding: 15px;
 
-        & + .cell {
-            margin-left: 2px;
-        }
+        // &.filled {
+        //     margin-left: 0px;
+        // }
+
+        // &.unfilled {
+        //     box-shadow: inset 2px 2px #999;
+        // }
+
+        // & + .cell {
+        //     margin-left: 2px;
+        // }
     }
 }
 </style>

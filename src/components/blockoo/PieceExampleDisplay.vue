@@ -160,7 +160,6 @@ export default {
                 }
             }
 
-            // rtv[x][y] = ++moveCount;
 
             this.pieceId.split('').forEach(s =>{
                 let movement = this.movements[s];
@@ -194,8 +193,6 @@ export default {
                     moveCount: ++moveCount
                 });
             });
-
-            console.log(usedCoordinates);
 
             while(this.hasNegativeValue(usedCoordinates, "x")){
                 usedCoordinates.forEach(c => {
