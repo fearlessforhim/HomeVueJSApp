@@ -7,10 +7,10 @@ export function arcDictionary() {
         {//get dressed bar
             showTime: new Date().setHours(hb, 0, 0, 0),
             stopTime: new Date().setHours(hb+1, 0, 0, 0),
-            arcConfig: {startMinute: 40, lengthInMinutes: 15, color: 'green', rounded: false},
+            arcConfig: {startMinute: 35, lengthInMinutes: 15, color: 'green', rounded: false},
             textLabel: {
                 position: {
-                    top: '350px',
+                    top: '500px',
                     left: '-200px'
                 },
                 text: 'Get Dressed / Make Bed',
@@ -20,14 +20,14 @@ export function arcDictionary() {
         },
         {
             showTime: new Date().setHours(hb, 0, 0, 0),
-            stopTime: new Date().setHours(hb+1, 0, 0, 0),
-            arcConfig: {startMinute: 55, lengthInMinutes: 5, color: 'blue', rounded: false},
+            stopTime: new Date().setHours(hb+1, 10, 0, 0),
+            arcConfig: {startMinute: 50, lengthInMinutes: 10, color: 'blue', rounded: false},
             textLabel: {
                 position: {
-                    top: '20px',
-                    left: '150px'
+                    top: '75px',
+                    left: '-150px'
                 },
-                text: 'Brush Hair/Appliance',
+                text: 'Brush Hair / Appliance',
                 icon: faBrush,
                 iconKey: 'bed-brush'
             }
@@ -38,8 +38,8 @@ export function arcDictionary() {
             arcConfig: {startMinute: 0, lengthInMinutes: 25, color: 'red', rounded: false},
             textLabel: {
                 position: {
-                    top: '50px',
-                    right: '0px'
+                    top: '350px',
+                    right: '-75px'
                 },
                 text: 'Eat',
                 icon: faBowlFood,
@@ -47,13 +47,13 @@ export function arcDictionary() {
             }
         },
         {//brush teeth bar
-            showTime: new Date().setHours(hb+1, 0, 0, 0),
+            showTime: new Date().setHours(hb, 45, 0, 0),
             stopTime: new Date().setHours(hb+2, 0, 0, 0),
-            arcConfig: {startMinute: 25, lengthInMinutes: 10, color: '#E600FF', rounded: false},
+            arcConfig: {startMinute: 25, lengthInMinutes: 9, color: '#E600FF', rounded: false},
             textLabel: {
                 position: {
                     bottom: '0px',
-                    left: '275px'
+                    left: '300px'
                 },
                 text: 'Brush Teeth!',
                 icon: faTooth,
@@ -63,13 +63,13 @@ export function arcDictionary() {
         {
             showTime: new Date().setHours(hb+1, 0, 0, 0),
             stopTime: new Date().setHours(hb+2, 0, 0, 0),
-            arcConfig: {startMinute: 35, lengthInMinutes: 5, color: 'brown', rounded: false},
+            arcConfig: {startMinute: 34, lengthInMinutes: 6, color: 'brown', rounded: false},
             textLabel: {
                 position: {
-                    bottom: '50px',
-                    left: '0px'
+                    bottom: '75px',
+                    left: '-50px'
                 },
-                text: 'Shoes',
+                text: 'Shoes/Water',
                 icon: faShoePrints,
                 iconKey: 'shoe'
             }
@@ -77,13 +77,13 @@ export function arcDictionary() {
         {//to the car bar
             showTime: new Date().setHours(hb+1, 0, 0, 0),
             stopTime: new Date().setHours(hb+2, 0, 0, 0),
-            arcConfig: {startMinute: 40, lengthInMinutes: 10, color: '#C89700', rounded: false},
+            arcConfig: {startMinute: 40, lengthInMinutes: 5, color: '#C89700', rounded: false},
             textLabel: {
                 position: {
-                    top: '350px',
+                    bottom: '300px',
                     left: '-150px'
                 },
-                text: 'Shoes / To the car!',
+                text: 'To the car!',
                 icon: faCarSide,
                 iconKey: 'car'
             }
