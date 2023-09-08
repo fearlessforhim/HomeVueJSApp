@@ -18,10 +18,8 @@ export default {
         }
     },
     mounted() {
-
         axios.get("http://localhost:8000/blockoo/")
         .then((response) => {
-            console.log(response.headers['set-cookies']);
             this.pageReady = true;
         });
     }
