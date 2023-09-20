@@ -1,6 +1,5 @@
 <template>
     <div 
-    v-if="this.weatherData.daily"
     class="weather-wrap"
     >
         <div class="weather-date">
@@ -10,7 +9,7 @@
             High / Low
         </div>
         <div class="high-low-values">
-            {{ this.dailyToday.temp.max }} / {{ this.dailyToday.temp.min }}
+            {{ this.dailyToday.temp.max.toFixed(0) }}&#176F / {{ this.dailyToday.temp.min.toFixed(0) }}&#176F
         </div>
         <div class="img-wrap">
             <img :src="this.iconURL" />
@@ -27,7 +26,23 @@ export default {
     name: "Weather",
     data() {
         return {
-            weatherData: {}
+            weatherData: {
+                daily : [
+                    {
+                        dt: 0,
+                        weather: [
+                            {
+                                icon: '10l'
+                            }
+                        ],
+                        temp: {
+                            max: 3.234,
+                            min: 1.567
+                        },
+                        summary: '???'
+                    }
+                ]
+            }
         }
     },
     computed: {
