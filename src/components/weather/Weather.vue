@@ -65,7 +65,7 @@ export default {
 
         if(!apiKey) return;
 
-        const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=45.583991&lon=-122.410082&appid=${apiKey}&units=imperial`);
+        const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=45.5863014&lon=-122.403277&appid=${apiKey}&units=imperial`);
         if (response.ok) {
             const text = await response.text();
             this.weatherData = JSON.parse(text);
