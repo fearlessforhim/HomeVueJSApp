@@ -44,7 +44,7 @@ export default {
     },
     async created() {
         const apiKeyResponse = await fetch('assets/weather-key.txt');
-        if(!response.ok) return;
+        if(!apiKeyResponse.ok) return;
 
         const apiKey = await apiKeyResponse.text();
 
