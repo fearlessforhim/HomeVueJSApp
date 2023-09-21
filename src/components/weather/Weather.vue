@@ -80,7 +80,7 @@ export default {
         },
         sunSetTime() {
             const date = new Date(this.weatherData.daily[0].sunset * 1000);
-            return `${date.getHours()}:${date.getMinutes()}`;
+            return `${date.getHours() - 12}:${date.getMinutes()}`;
         },
         dayLength() {
             const totalSeconds = this.weatherData.daily[0].sunset - this.weatherData.daily[0].sunrise;
@@ -148,6 +148,10 @@ export default {
         padding-top: 10px;
         display: flex;
         text-align: center;
+        
+        > div {
+            flex: 1;
+        }
 
         svg {
             width: 100%;
