@@ -29,17 +29,17 @@ export default {
             weatherData: {
                 daily : [
                     {
-                        dt: 0,
+                        dt: 1695307872,
                         weather: [
                             {
-                                icon: '10l'
+                                icon: '10d'
                             }
                         ],
                         temp: {
                             max: 3.234,
                             min: 1.567
                         },
-                        summary: '???'
+                        summary: 'This is a long test description to test word wrap in the weather widget'
                     }
                 ]
             }
@@ -47,7 +47,7 @@ export default {
     },
     computed: {
         weatherDate() {
-            const weatherDate = new Date(this.weatherData.daily[0].dt);
+            const weatherDate = new Date(this.weatherData.daily[0].dt * 1000);
             return weatherDate.toLocaleDateString('en-us', { weekday: 'short', day: 'numeric', month: 'short' });
         },
         dailyToday() {
@@ -79,12 +79,13 @@ export default {
   
 <style scoped lang="scss">
 .weather-wrap {
-    position: absolute;
     color: white;
-    font-size: 20px;
+    font-size: 32px;
     right: 0;
     bottom: 0;
     padding: 30px;
+    width: 100%;
+    margin-top: 50px;
 
     .high-low-label {
         text-align: center;
@@ -94,6 +95,7 @@ export default {
 
     .high-low-values {
         text-align: center;
+        font-weight: bold;
     }
 
     .img-wrap {

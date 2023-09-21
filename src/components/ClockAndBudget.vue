@@ -3,19 +3,17 @@
       class="clock-budget-container"
     >
       <Clock/>
-      <Budget/>
-      <Weather/>
+      <BudgetAndWeather/>
     </div>
   </template>
   
   <script>
       import Clock from './clock/Clock.vue';
-      import Budget from './budget/Budget.vue';
-      import Weather from './weather/Weather.vue';
+      import BudgetAndWeather from './budget/BudgetAndWeather.vue';
     
       export default {
           name: "ClockAndBudget",
-          components: {Clock, Budget, Weather}
+          components: {Clock, BudgetAndWeather}
   
       }
   </script>
