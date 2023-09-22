@@ -12,6 +12,9 @@
         <div class="img-wrap">
             <img :src="this.iconURL" />
         </div>
+        <div class="current-temp">
+            {{ this.weatherData.current.temp.toFixed(0) }}&#176F
+        </div>
         <div class="summary">
             {{ this.dailyToday.summary }}
         </div>
@@ -35,6 +38,7 @@
 
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import zeropad from '../../util/zeropad.js';
 
 export default {
     name: "Weather",
@@ -42,6 +46,7 @@ export default {
     data() {
         return {
             weatherData: {
+                current: { temp: 0 },
                 daily: [
                     {
                         dt: 1695307872,
@@ -63,6 +68,20 @@ export default {
             icons: {
                 faSun,
                 faMoon
+            },
+            timer: null,
+            apiKey: null
+        }
+    },
+    methods: {
+        loadData: async function () {
+            if (!this.apiKey) return;
+            const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=45.5863014&lon=-122.403277&appid=${this.apiKey}&units=imperial`);
+            if (response.ok) {
+                const text = await response.text();
+                this.weatherData = JSON.parse(text);
+            } else {
+                console.log(response);
             }
         }
     },
@@ -76,18 +95,18 @@ export default {
         },
         sunRiseTime() {
             const date = new Date(this.weatherData.daily[0].sunrise * 1000);
-            return `${date.getHours()}:${date.getMinutes()}`;
+            return `${date.getHours()}:${zeropad(date.getMinutes())}`;
         },
         sunSetTime() {
             const date = new Date(this.weatherData.daily[0].sunset * 1000);
-            return `${date.getHours() - 12}:${date.getMinutes()}`;
+            return `${date.getHours() - 12}:${zeropad(date.getMinutes())}`;
         },
         dayLength() {
             const totalSeconds = this.weatherData.daily[0].sunset - this.weatherData.daily[0].sunrise;
             const hours = Math.floor(totalSeconds / 3600);
-            const minutes = Math.floor((totalSeconds - (hours * 3600))/60);
+            const minutes = Math.floor((totalSeconds - (hours * 3600)) / 60);
             const seconds = totalSeconds - (hours * 3600) - (minutes * 60);
-            return `${hours}:${minutes}:${seconds}`;
+            return `${hours}:${zeropad(minutes)}:${zeropad(seconds)}`;
         },
         iconURL() {
             return `https://openweathermap.org/img/wn/${this.weatherData.daily[0].weather[0].icon}@4x.png`;
@@ -97,19 +116,17 @@ export default {
         const apiKeyResponse = await fetch('assets/weather-key.txt');
         if (!apiKeyResponse.ok) return;
 
-        const apiKey = await apiKeyResponse.text();
+        this.apiKey = await apiKeyResponse.text();
 
-        if (!apiKey) return;
+        this.loadData();
 
-        const response = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=45.5863014&lon=-122.403277&appid=${apiKey}&units=imperial`);
-        if (response.ok) {
-            const text = await response.text();
-            this.weatherData = JSON.parse(text);
-        } else {
-            console.log(response);
-        }
+        this.timer = setInterval(() => {
+            this.loadData()
+        }, 120000);
+    },
+    beforeDestroy() {
+        clearInterval(this.timer);
     }
-
 }
 </script>
   
@@ -139,6 +156,11 @@ export default {
         text-align: center;
     }
 
+    .current-temp {
+        text-align: center;
+        font-weight: bold;
+    }
+
     .summary {
         text-align: center;
     }
@@ -148,8 +170,8 @@ export default {
         padding-top: 10px;
         display: flex;
         text-align: center;
-        
-        > div {
+
+        >div {
             flex: 1;
         }
 

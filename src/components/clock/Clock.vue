@@ -32,6 +32,7 @@ import { svgArcBuilder } from './svg-arc-builder.js';
 import { arcDictionary } from './arc-dictionary.js';
 import NumbersContainer from './NumbersContainer.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import zeropad from '../../util/zeropad.js';
 
 export default {
   name: "Clock",
@@ -80,7 +81,7 @@ export default {
       };
     },
     digitalTime() {
-      return `${this.renderTime.getHours()}:${this.renderTime.getMinutes()}`;
+      return `${this.renderTime.getHours()}:${zeropad(this.renderTime.getMinutes())}`;
     }
   },
   mounted() {
